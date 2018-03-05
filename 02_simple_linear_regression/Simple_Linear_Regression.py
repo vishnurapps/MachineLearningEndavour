@@ -26,10 +26,9 @@ y = dataset.iloc[:, 1].values
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
 
-"""
-#Feature scaling
-from sklearn.preprocessing import StandardScaler
-sc_X = StandardScaler()
-X_train = sc_X.fit_transform(X_train)
-X_test = sc_X.transform(X_test)
-"""
+#Fitting simple linear regression to training set
+from sklearn.linear_model import LinearRegression
+
+#Here the simple linear regression model learns our data. The machine name is regressor, which is of type Simple Linear Regression
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
