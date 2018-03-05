@@ -32,3 +32,6 @@ from sklearn.linear_model import LinearRegression
 #Here the simple linear regression model learns our data. The machine name is regressor, which is of type Simple Linear Regression
 regressor = LinearRegression()
 regressor.fit(X_train, y_train)
+
+#Predecting the test results
+y_pred = regressor.predict(X_test)
