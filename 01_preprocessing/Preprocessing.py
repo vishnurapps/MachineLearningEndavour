@@ -74,3 +74,21 @@ and predecting the answers to some similar information. That is the reason why w
 dataset to training and test.
 """
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+#Feature scaling
+from sklearn.preprocessing import StandardScaler
+
+"""
+Feature scaling means scaling the values to similar range. If we look at the dataset that we have, we can see that
+the data are age and salary, where age is a small number and salary is a huge number. Some machine learning 
+algorithms are based on Euclidean distance (distance between two points). Feature scaling is done by either 
+Standardization or Normalization
+"""
+
+sc_X = StandardScaler()
+X_train = sc_X.fit_transform(X_train)
+X_test = sc_X.transform(X_test) #There is no need to fit the test set because we have already fit it above in training set
+
+"""
+We wont do feature scaling for y here because, the value of y is small. If its large, we have to do feature scaling
+"""
