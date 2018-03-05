@@ -25,7 +25,7 @@ y = dataset.iloc[:, 1].values
 #Splitting the dataset into training set and test set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 1/3, random_state = 0)
-regressor.predict(X_test)
+
 #Fitting simple linear regression to training set
 from sklearn.linear_model import LinearRegression
 
@@ -43,7 +43,7 @@ plt.title("Salary vs Experience (Train data)")
 plt.xlabel("Years of Experience")
 plt.ylabel("Salary")
 
-#Visualising the training set data
+#Visualising the test set data
 plt.scatter(X_test, y_test, color = "red")
 plt.plot(X_train, regressor.predict(X_train), color = "blue")
 plt.title("Salary vs Experience (Test data)")
