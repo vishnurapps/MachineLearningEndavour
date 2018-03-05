@@ -64,3 +64,13 @@ the machine learning model knows that this is a catagory and there is no order b
 """
 labelencoder_y = LabelEncoder()
 y = labelencoder_y.fit_transform(y)
+
+#Splitting the dataset into training set and test set
+from sklearn.cross_validation import train_test_split
+
+"""
+As the name suggest, machine learning is all about a machine learning some information
+and predecting the answers to some similar information. That is the reason why we are splitting the
+dataset to training and test.
+"""
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
