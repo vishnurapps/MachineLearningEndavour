@@ -1,0 +1,21 @@
+Building Models
+ 
+All In 
+******
+This is used when we have prior knowledge about the topic and we know that all independent 
+variables have influence in dependend variable.
+ 
+Backward Elimination
+********************
+
+This method include 5 steps
+
+Step 1 : Select a significant level to stay in the model, lets say SL = 0.05
+Step 2 : Fit the model with all possible predectors
+Step 3 : Consider the predector with highest p value. If the value is greater than SL, 
+         go to Step 4 else go to FIN
+Step 4 : Remove that predector
+Step 5 : Fit the model without the removed variable. Go to step 3
+FIN : Model is ready
+
+
