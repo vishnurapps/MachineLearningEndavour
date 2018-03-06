@@ -59,3 +59,7 @@ consider these two as significant. But they are not. This is called the dummy va
 In order to avoid this issue, what we need to do is always omit one column. If we have 3 
 dummy variables use only 2.
 """
+
+#Spliting to test and training set
+from sklearn.cross_validation import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
