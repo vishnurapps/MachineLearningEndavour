@@ -30,3 +30,32 @@ from sklearn.preprocessing import OneHotEncoder
 onehotencoder = OneHotEncoder(categorical_features = [3])   #Here we specify the column to encode.
 X = onehotencoder.fit_transform(X).toarray()    #After this we can see that the states are replaced by ones and zeros
 
+"""
+Sample encoding of catagorical values in dataset
+ 
+State		Kerala		Punjab
+Kerala----->1			0
+Punjab----->0			1
+Punjab----->0			1
+Kerala----->1			0
+Kerala----->1			0
+Punjab----->0			1
+ 
+Here after encoding, we have two columns, one for kerala and other for pubjab. when 
+the state is Kerala, we put one under Kerala and 0 under Punjab and viseversa. 
+But if we look closely we dont need two columns to represent these two states. 
+Only the Kerala column is required, if its 1 then state is Kerala otherwise state is Punjab. 
+Here the Punjab column is a Dummy variable column 
+"""
+
+#Dummy Variable Trap
+X = X[:, 1:]    #Here we are removing the first column from the list
+
+"""
+Dummy Variable trap
+In the case of the above example, we can see that the value of Punjab is always 1-Kerala. 
+When we give the model these two columns as input, there is a chance that the model may 
+consider these two as significant. But they are not. This is called the dummy variable trap. 
+In order to avoid this issue, what we need to do is always omit one column. If we have 3 
+dummy variables use only 2.
+"""
