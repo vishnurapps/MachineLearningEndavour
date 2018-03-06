@@ -6,6 +6,12 @@ Created on Tue Mar  6 21:31:00 2018
 @author: vishnu
 """
 
+"""
+In case of a mutiple linear regression, the equation can be written like this
+y = b0 + b1x1 + b2x2 + ... + bnxn where y is the dependent variable and x is the 
+independent variable.
+"""
+
 #Importing Libraries that are required for preprocessing
 import numpy as np
 import pandas as pd
