@@ -71,3 +71,26 @@ regressor.fit(X_train, y_train)
 
 #Predicting the test result
 y_pred = regressor.predict(X_test)
+
+"""
+In the above method, we have considered all the independent variables for calculating the 
+dependent variable. The results that we have got were good. But lets try to optimise this using 
+backward elimination.
+"""
+
+#Building an optimal model usinf=g backward elimination
+import statsmodels.formula.api as sm
+
+"""
+The equation for multiplr linear regression is y = b0 + b1x1 + b2x2 + ... + bnxn. Here there is a
+b0 constant which dont have any independent variable associated with it. But we can assume
+that it has an independent variable x0 associated with it which has a value 1. Stats model library 
+wants us to add this variable to the matrix. How ever sklearn knows that there is a const b0 team. 
+So we didnt add it in the modules from sklearn.
+"""
+""""
+append is used to add values to an array. ones is used to generate a matrix of ones.
+axis is used to indicate how we want to add, if axis is 0, then it means we want to add
+row, if its 1, then we want to add column.
+"""
+X = np.append( arr = np.ones((50,1)).astype(int), values = X, axis = 1)
