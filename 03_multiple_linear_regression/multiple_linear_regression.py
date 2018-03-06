@@ -94,3 +94,29 @@ axis is used to indicate how we want to add, if axis is 0, then it means we want
 row, if its 1, then we want to add column.
 """
 X = np.append( arr = np.ones((50,1)).astype(int), values = X, axis = 1)
+
+#Backward elimination with SL = 0.05
+
+X_opt = X[:, [0, 1, 2, 3, 4, 5]]    #Here we are specifying all the columns of X
+regressor_OSL = sm.OLS(endog = y, exog = X_opt).fit()    #enddog is dependent variable exog is 
+regressor_OSL.summary()
+
+#p-value of second column is very high so we are removing it
+X_opt = X[:, [0, 1, 3, 4, 5]]   
+regressor_OSL = sm.OLS(endog = y, exog = X_opt).fit()    
+regressor_OSL.summary()
+
+#p-value of first column is very high so we are removing it
+X_opt = X[:, [0, 3, 4, 5]]   
+regressor_OSL = sm.OLS(endog = y, exog = X_opt).fit()    
+regressor_OSL.summary()
+
+#p-value of forth column is very high so we are removing it
+X_opt = X[:, [0, 3, 5]]   
+regressor_OSL = sm.OLS(endog = y, exog = X_opt).fit()    
+regressor_OSL.summary()
+
+#p-value of fifth column is very high so we are removing it
+X_opt = X[:, [0, 3]]   
+regressor_OSL = sm.OLS(endog = y, exog = X_opt).fit()    
+regressor_OSL.summary()
