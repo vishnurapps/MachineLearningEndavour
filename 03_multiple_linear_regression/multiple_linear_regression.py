@@ -63,3 +63,11 @@ dummy variables use only 2.
 #Spliting to test and training set
 from sklearn.cross_validation import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, random_state = 0)
+
+#Fitting Multiple linear regression to training set
+from sklearn.linear_model import LinearRegression
+regressor = LinearRegression()
+regressor.fit(X_train, y_train)
+
+#Predicting the test result
+y_pred = regressor.predict(X_test)
