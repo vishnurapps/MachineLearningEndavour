@@ -51,3 +51,14 @@ In that case we need the const term, coefficient of x and coefficient of x^2. X_
 all those terms. To get X_poly we need to fit to X first and then transform.
 """
 X_poly = poly_reg.fit_transform(X) 
+
+"""
+We are going to create one more linear regression object which is used to fit the X_poly.
+There a possible doubt here. Why we need to fit again ? The reason is we have created a new
+matrix of multiple columns using the polynomial regressor. We are fitting these columns 
+with y.
+"""
+
+lin_reg_2 = LinearRegression()
+lin_reg_2.fit(X_poly, y)
+
