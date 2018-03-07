@@ -29,3 +29,25 @@ we can see that the size is (10,1) which is a 1D matrix.
 
 X = dataset.iloc[:, 1:2].values
 y = dataset.iloc[:, 2].values
+
+"""
+To get a clear understanding on the differences between the linear and polynomial regression models,
+we are going to implement both the models here.
+"""
+
+#Fitting the linear regression to dataset
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(X,y)
+
+#Fitting the polymonial regression to dataset
+from sklearn.preprocessing import PolynomialFeatures
+poly_reg = PolynomialFeatures(2)    #Highest degree of x
+
+"""
+We have only X here which is linear, we want coefficients of higher order of X. 
+While creating the poly_reg, we specified that we want the square term as the highest order.
+In that case we need the const term, coefficient of x and coefficient of x^2. X_poly contains
+all those terms. To get X_poly we need to fit to X first and then transform.
+"""
+X_poly = poly_reg.fit_transform(X) 
