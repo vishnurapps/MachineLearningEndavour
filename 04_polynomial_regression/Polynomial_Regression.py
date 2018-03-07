@@ -42,7 +42,7 @@ lin_reg.fit(X,y)
 
 #Fitting the polymonial regression to dataset
 from sklearn.preprocessing import PolynomialFeatures
-poly_reg = PolynomialFeatures(2)    #Highest degree of x
+poly_reg = PolynomialFeatures(degree = 5)    #Highest degree of x
 
 """
 We have only X here which is linear, we want coefficients of higher order of X. 
@@ -70,4 +70,21 @@ plt.xlabel("Position Level")
 plt.ylabel("Salary")
 plt.show()
 
+#Visualising the Polynomial Regression Result
 
+"""
+Now coming into plotting the polynmial regression. How will we plot it ?
+The thing that comes to our mind is replace the lin_reg with lin_reg_2. But will it solve the problem ?
+If we look here, we can see that lin_reg_2 is an object of LinearRegression so
+the replacement of the lin_reg with lin_reg_2 wont give us the desired result. 
+So what if we replace X with X_poly ? X_poly is already created matrix from X, so 
+if we get a new value to predect, using X_poly wont help us. So we have to use
+ poly_reg.fit_transform(X)  instead of X_poly
+ """
+ 
+plt.scatter(X, y, color = "red")
+plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color = "blue")
+plt.title("Truth or Bluff (Polynomial regression)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
