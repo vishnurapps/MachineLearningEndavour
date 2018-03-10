@@ -15,7 +15,7 @@ import pandas as pd
 dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values     #This is to get matrx as input. Explanation in polynomial regression
 y = dataset.iloc[:, 2].values
-
+y.reshape(-1,1)                     #Explanation of numpy reshape is available as a jupiter notebook.
 """
 In the previous sections other than preprocessing section, we didnt do feature scaling.
 That was because, the libraries that we were using was doing the same internally. But in 
@@ -28,5 +28,5 @@ from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 sc_y = StandardScaler()
 X = sc_X.fit_transform(X)
-y = y.reshape(-1,1)
 y = sc_y.fit_transform(y)
+
