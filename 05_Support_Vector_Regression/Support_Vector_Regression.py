@@ -39,7 +39,7 @@ from sklearn.svm import SVR
 There are types of kernels in SVR. Our problem is non linear. We are going to use rbf kernel here.
 """
  
-regressor = SVR(kernel = 'poly')
+regressor = SVR(kernel = 'sigmoid')
 regressor.fit(X, y)
 
 #Visualising the SVR result
