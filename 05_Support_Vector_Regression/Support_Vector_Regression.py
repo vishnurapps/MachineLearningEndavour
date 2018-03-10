@@ -32,3 +32,20 @@ X = sc_X.fit_transform(X)
 y = np.ravel(sc_y.fit_transform(y))
 
 
+#Fitting SVR to dataset
+from sklearn.svm import SVR
+
+"""
+There are types of kernels in SVR. Our problem is non linear. We are going to use rbf kernel here.
+"""
+ 
+regressor = SVR(kernel = 'rbf')
+regressor.fit(X, y)
+
+#Visualising the SVR result
+plt.scatter(X, y, color = "red")
+plt.plot(X, regressor.predict(X), color = "blue")
+plt.title("Truth or Bluff (SVR)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
