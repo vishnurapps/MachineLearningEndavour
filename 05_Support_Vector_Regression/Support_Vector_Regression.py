@@ -39,7 +39,7 @@ from sklearn.svm import SVR
 There are types of kernels in SVR. Our problem is non linear. We are going to use rbf kernel here.
 """
  
-regressor = SVR(kernel = 'rbf')
+regressor = SVR(kernel = 'poly')
 regressor.fit(X, y)
 
 #Visualising the SVR result
@@ -56,7 +56,7 @@ This is because SVR consider it as an outlier. The model was made to fit to othe
 """
 
 
-#Predcting the result
+#Predicting the result
 
 """
 Here we cannot add 6.5 as input to the transform method, because it is expecting a matrix as input.
