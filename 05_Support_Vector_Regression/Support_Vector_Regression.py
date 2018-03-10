@@ -49,3 +49,21 @@ plt.title("Truth or Bluff (SVR)")
 plt.xlabel("Position Level")
 plt.ylabel("Salary")
 plt.show()
+
+"""
+If we see the plot, we can see that the there is a big mismatch between the real and predicted salary of CEO.
+This is because SVR consider it as an outlier. The model was made to fit to other data points.
+"""
+
+
+#Predcting the result
+
+"""
+Here we cannot add 6.5 as input to the transform method, because it is expecting a matrix as input.
+To convert 6.5 to array we use numpy.array[[6.5]]. First square bracket is used to represent all rows of the
+matrix and second bracket to represent each row. We are doing the transform and inverse transform as we have done 
+feature scaling to the orginal data fed to the model.
+"""
+
+y_pred = sc_y.inverse_transform(regressor.predict(sc_X.transform(np.array([[6.5]]))))
+
