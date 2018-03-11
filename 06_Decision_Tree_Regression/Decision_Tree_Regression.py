@@ -27,3 +27,11 @@ On running the regression algorithm, it will start to split the data into variou
 The spliting is based on information entropy. The prediction in case of Decision Tree Regression 
 is based on the average of the data in a particular segment
 """
+
+#Visualising the dataset using decision tree regression
+plt.plot(X, y, color = "red")
+plt.scatter(X, regressor.predict(X), color = "blue")
+plt.title("Truth or Bluff (Decision Tree Regression)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
