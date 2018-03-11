@@ -83,3 +83,6 @@ plt.title("Truth or Bluff (Decision Tree Regression)")
 plt.xlabel("Position Level")
 plt.ylabel("Salary")
 plt.show()
+
+#Predecting result
+y_pred = regressor.predict(6.5)
