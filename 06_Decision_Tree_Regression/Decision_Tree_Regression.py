@@ -35,3 +35,21 @@ plt.title("Truth or Bluff (Decision Tree Regression)")
 plt.xlabel("Position Level")
 plt.ylabel("Salary")
 plt.show()
+
+"""
+What we have got above is not the real plot. Decision tree split the independent variable to 
+different section based on entropy and information gained. We know that the decision tree is taking the average.
+But the plot is not horizontal line. This is happening because of the resolution that
+we are taking for plotting.
+
+Here we are plotting the result at x = 1, 2, 3 etc only, not at any other points in between that.
+To solve this what we need to do is, we need to increase the resolution of the graph
+"""
+
+#Explanation for bad plot
+plt.scatter(X, y, color = "red")
+plt.plot(X, regressor.predict(X), color = "blue")
+plt.title("Truth or Bluff (Decision Tree Regression)")
+plt.xlabel("Position Level")
+plt.ylabel("Salary")
+plt.show()
