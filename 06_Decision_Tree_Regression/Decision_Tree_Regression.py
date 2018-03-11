@@ -22,3 +22,8 @@ from sklearn.tree import DecisionTreeRegressor
 regressor = DecisionTreeRegressor(random_state = 0)
 regressor.fit(X, y)
 
+"""
+On running the regression algorithm, it will start to split the data into various segments. 
+The spliting is based on information entropy. The prediction in case of Decision Tree Regression 
+is based on the average of the data in a particular segment
+"""
