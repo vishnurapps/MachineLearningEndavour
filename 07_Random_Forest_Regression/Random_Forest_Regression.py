@@ -24,5 +24,9 @@ import pandas as pd
 dataset = pd.read_csv('Position_Salaries.csv')
 X = dataset.iloc[:, 1:2].values     #This is to get matrx as input. Explanation in polynomial regression
 y = dataset.iloc[:, 2].values        
-            
+
+#Fitting Random Forest Regression to dataset
+from sklearn.ensemble import RandomForestRegressor
+regressor = RandomForestRegressor(n_estimators = 10, random_state = 0)      #n_estimators - Number of decision trees
+regressor.fit(X,y)            
 
