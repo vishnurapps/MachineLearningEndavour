@@ -15,5 +15,14 @@ decision trees and to predict the result, we will take the average of the predic
 decision trees
 """
 
+# Importing the libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Importing the dataset
+dataset = pd.read_csv('Position_Salaries.csv')
+X = dataset.iloc[:, 1:2].values     #This is to get matrx as input. Explanation in polynomial regression
+y = dataset.iloc[:, 2].values        
             
 
