@@ -20,3 +20,13 @@ Step 2 - Take K nearest neighbours of the new data point according to the Euclid
 Step 3 - Amoung these K neighbours, count the number of data points in each category
 Steo 4 - Assign the new data point to the category where you counted the most neighbors
 """
+
+# Importing the libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Importing the dataset
+dataset = pd.read_csv('Position_Salaries.csv')
+X = dataset.iloc[:, 1:2].values     
+y = dataset.iloc[:, 2].values 
