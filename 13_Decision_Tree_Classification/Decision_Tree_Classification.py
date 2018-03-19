@@ -30,3 +30,10 @@ X_test = sc.transform(X_test)
 from sklearn.tree import DecisionTreeClassifier
 classifier = DecisionTreeClassifier(criterion = "entropy", random_state = 0)
 classifier.fit(X_train, y_test)
+
+# Predicting the Test set results
+y_pred = classifier.predict(X_test)
+
+# Making the Confusion Matrix
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test, y_pred)
