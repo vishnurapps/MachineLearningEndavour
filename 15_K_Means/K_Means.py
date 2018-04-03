@@ -28,4 +28,8 @@ plt.xlabel('Number of clusters')
 plt.ylabel('WCSS')
 plt.show()
 
+# Fitting K-Means to the dataset
+kmeans = KMeans(n_clusters = 5, init = 'k-means++', random_state = 42)
+y_kmeans = kmeans.fit_predict(X)        #After this fit, we will get the list of all the clusters
+
 
