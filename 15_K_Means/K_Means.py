@@ -33,3 +33,15 @@ kmeans = KMeans(n_clusters = 5, init = 'k-means++', random_state = 42)
 y_kmeans = kmeans.fit_predict(X)        #After this fit, we will get the list of all the clusters
 
 
+# Visualising the clusters
+plt.scatter(X[y_kmeans == 0, 0], X[y_kmeans == 0, 1], s = 25, c = 'red', label = 'Careful')
+plt.scatter(X[y_kmeans == 1, 0], X[y_kmeans == 1, 1], s = 25, c = 'blue', label = 'Standard')
+plt.scatter(X[y_kmeans == 2, 0], X[y_kmeans == 2, 1], s = 25, c = 'green', label = 'Target')
+plt.scatter(X[y_kmeans == 3, 0], X[y_kmeans == 3, 1], s = 25, c = 'cyan', label = 'Careless')
+plt.scatter(X[y_kmeans == 4, 0], X[y_kmeans == 4, 1], s = 25, c = 'magenta', label = 'Sensible ')
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s = 100, c = 'black', label = 'Centroids')
+plt.title('Clusters of customers')
+plt.xlabel('Annual Income (k$)')
+plt.ylabel('Spending Score (1-100)')
+plt.legend()
+plt.show()
