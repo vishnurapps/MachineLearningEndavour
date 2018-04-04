@@ -13,3 +13,8 @@ import pandas as pd
 
 # Importing the dataset
 dataset = pd.read_csv('Market_Basket_Optimisation.csv', header = None)
+
+# Apiori needs input as a list where each transaction itself is another list. Lets do that
+transactions = []
+for i in range(0, 7501):
+    transactions.append([str(dataset.values[i,j]) for j in range(0, 20)])
