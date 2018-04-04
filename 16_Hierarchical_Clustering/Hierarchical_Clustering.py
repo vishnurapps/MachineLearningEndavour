@@ -22,3 +22,8 @@ plt.title("Dentogram")
 plt.xlabel("Customers")
 plt.ylabel("Euclidean Distances")
 plt.show()
+
+# Fitting the datatset to HC
+from sklearn.cluster import AgglomerativeClustering
+hc = AgglomerativeClustering(n_clusters = 5, affinity = "euclidean", linkage = "ward")
+y_hc = hc.fit_predict(X)
