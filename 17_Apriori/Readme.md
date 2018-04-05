@@ -22,17 +22,24 @@ Transaction|Items
 This says how popular an itemset is, as measured by the proportion of transactions in which an itemset appears.
 In above table , the support of {Apple} is 4 out of 8, or 50%. Itemsets can also contain multiple items. For instance, the support of {Apple, Beer, Rice} is 2 out of 8, or 25%.
 
-![](https://github.com/vishnurapps/MachineLearningEndavour/blob/master/images/Item_Support.gif)
+![](../images/Item_Support.gif)
 
 We can define support for an item set also. Let say the item set is the set of Apple and Beer, then we can write the equation as
 
-![](https://github.com/vishnurapps/MachineLearningEndavour/blob/master/images/Item_set_Support.gif)
+![](../images/Item_set_Support.gif)
 
 If you discover that sales of items beyond a certain proportion tend to have a significant impact on your profits, you might consider using that proportion as your support threshold. You may then identify itemsets with support values above this threshold as significant itemsets.
 
 ## Confidence 
-This says how likely item Y is purchased when item X is purchased, expressed as {X -> Y}. This is measured by the proportion of transactions with item X, in which item Y also appears. In Table 1, the confidence of {apple -> beer} is 3 out of 4, or 75%.
+This says how likely item Y is purchased when item X is purchased, expressed as {X -> Y}. This is measured by the proportion of transactions with item X, in which item Y also appears. In Table, the confidence of {apple -> beer} is 3 out of 4, or 75%.
 
-![](https://github.com/vishnurapps/MachineLearningEndavour/blob/master/images/Confidence_of_X_to_Y.gif)
+![](../images/Confidence_of_X_to_Y.gif)
 
 One drawback of the confidence measure is that it might misrepresent the importance of an association. This is because it only accounts for how popular apples are, but not beers. If beers are also very popular in general, there will be a higher chance that a transaction containing apples will also contain beers, thus inflating the confidence measure. To account for the base popularity of both constituent items, we use a third measure called lift.
+
+## Lift
+This says how likely item Y is purchased when item X is purchased, while controlling for how popular item Y is. In Table , the lift of {apple -> beer} is 1,which implies no association between items. A lift value greater than 1 means that item Y is likely to be bought if item X is bought, while a value less than 1 means that item Y is unlikely to be bought if item X is bought.
+
+![](../images/Lift_of_X_to_Y.gif)
+
+
