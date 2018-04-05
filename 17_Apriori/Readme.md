@@ -42,4 +42,6 @@ This says how likely item Y is purchased when item X is purchased, while control
 
 ![](../images/Lift_of_X_to_Y.gif)
 
+Lift can also be written as 
 
+![](../images/Lift_of_X_to_Y_new.gif)
