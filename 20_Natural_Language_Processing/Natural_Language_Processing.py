@@ -29,5 +29,12 @@ for i in range (0, 1000):
     review = [ps.stem(word) for word in review if not word in set(stopwords.words('english'))] #applying steming
     review = ' '.join(review) #making it a sentence again
     corpus.append(review) #adding to list
+    
+# Create a Bag of words model
+from sklearn.feature_extraction.text import CountVectorizer
+#cv = CountVectorizer()  #When we do like this it will take all unique words that the model sees in the review. We dont need all of them some might be a name or somethink like that
+cv = CountVectorizer(max_features=1500) #Here we are saying that we need only the most relivent 1500 words
+X = cv.fit_transform(corpus).toarray()
+y = dataset.iloc[:, 1].values
 
 
