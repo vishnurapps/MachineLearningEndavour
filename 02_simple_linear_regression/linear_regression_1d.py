@@ -9,8 +9,7 @@ Created on Wed May 16 23:16:35 2018
 import numpy as np
 import matplotlib.pyplot as plt
 
-# load the data
-X = []
+X = []                              #lists to store data
 Y = []
 for line in open('data_1d.csv'):
     x, y = line.split(',')          #splitting the value of x and y from file
@@ -24,12 +23,13 @@ plt.scatter(X, Y)                   #Plotting as a scatter plot
 plt.show(X, Y)                      #Show the plot
 
 denominator = X.dot(X) - X.mean() * X.sum()
-a = ( X.dot(Y) - Y.mean()*X.sum() ) / denominator
-b = ( Y.mean() * X.dot(X) - X.mean() * X.dot(Y) ) / denominator
+a = ( X.dot(Y) - Y.mean()*X.sum() ) / denominator               #slope of line
+b = ( Y.mean() * X.dot(X) - X.mean() * X.dot(Y) ) / denominator #y intercept
 
 
 Yhat = a*X + b                      #predicted value of Y
 
 plt.scatter(X, Y)
-plt.plot(X, Yhat)
+plt.plot(X, Yhat, color='red')      #plotting everything together
 plt.show()
+
