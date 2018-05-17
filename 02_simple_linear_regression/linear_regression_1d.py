@@ -33,3 +33,8 @@ plt.scatter(X, Y)
 plt.plot(X, Yhat, color='red')      #plotting everything together
 plt.show()
 
+num = Y - Yhat                              # sum of squares residual. Actually we are just finding difference here
+den = Y - Y.mean()                          # sum of squares total. Actually we are just finding difference here.
+rsquare = 1 - num.dot(num)/den.dot(den)     #dot is used to find square of vector
+print (rsquare)                             #value of rsquare is 0.99 which is very good.
+
